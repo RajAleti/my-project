@@ -1,7 +1,7 @@
 name: 'Terraform GitHub Actions'
- defaults:
-   run:
-     working-directory: "newcodingfolder"
+defaults:
+    run:
+      working-directory: "newcodingfolder"
  on:
    - pull_request
    - push
