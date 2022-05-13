@@ -14,7 +14,7 @@ jobs:
 
 
     steps:
-      - uses: action/checkout@v2
+      - uses: action/checkout@my-project
       - name: 'Terraform init'
         id: init
         run: terraform init
