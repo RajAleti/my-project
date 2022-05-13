@@ -6,6 +6,10 @@ defaults:
 on:
   - pull_request
   - push
+      
+      branches:
+       
+        - master
 jobs:
   terraform:
 
@@ -14,7 +18,7 @@ jobs:
 
 
     steps:
-      - uses: action/checkout@my-project
+      - uses: action/checkout@v2
       - name: 'Terraform init'
         id: init
         run: terraform init
