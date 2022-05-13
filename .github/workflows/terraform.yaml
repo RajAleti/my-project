@@ -1,8 +1,6 @@
 name: 'Terraform GitHub Actions' 
 defaults: 
- on:
-   - pull_request
-   - push
+ on: push
  jobs:
    terraform:
      name: 'Terraform'
