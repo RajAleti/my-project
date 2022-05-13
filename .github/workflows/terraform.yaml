@@ -1,7 +1,5 @@
-name: 'Terraform GitHub Actions'
-defaults:
-   run:
-     working-directory: "TerraformFiles"
+name: 'Terraform GitHub Actions' 
+defaults: 
  on:
    - pull_request
    - push
