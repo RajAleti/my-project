@@ -1,5 +1,5 @@
 name: 'Terraform Github Actions'
-default:
+defaults:
   
   run:
     working-directory: "TerraformFiles"
