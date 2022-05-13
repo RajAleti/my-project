@@ -37,7 +37,7 @@ jobs:
       - name: 'Terraform Plan'
         id: plan
         run: terraform plan
-        continue-on-error:true
+        continue-on-error: true
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
@@ -46,7 +46,7 @@ jobs:
         id: apply
         run: terraform apply
 
-        continue-on-error:true
+        continue-on-error: true
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
