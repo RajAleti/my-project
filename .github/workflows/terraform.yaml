@@ -1,40 +1,28 @@
-name: 'Terraform GitHub Actions' 
-defaults: 
- on: push
- jobs:
-   terraform:
-     name: 'Terraform'
-     runs-on: ubuntu-latest
+- name: 'Terraform Github Actions'
+-default:
+  
+  run:
+    working-directory: "TerraformFiles"
+on:
+  - pull_request
+  - push
+jobs:
+  terraform:
+
+    name: 'Terraform'
+    runs-on: ubuntu-latest
 
 
-     env:
-       TF_VAR_client_id: ${{ secrets.TF_VAR_client_id }} 
-       TF_VAR_client_secret: ${{ secrets.TF_VAR_client_secret }} 
-       TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
-       TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }} 
+    steps:
+      - uses: action/checkout@master
+      - name: 'Terraform init'
+        id: init
+        run: terraform init
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
 
-     steps:
-       # - name: 'Checkout'
-       - uses: actions/checkout@master
-       - name: 'Terraform Init'
-         # uses: hashicorp/terraform-github-actions@master
-         id: init
-         run: terraform init
-         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       - name: Terraform Validate
-         id: validate
-         run: terraform validate 
 
-       - name: Terraform Plan
-         id: plan
-         run: terraform plan 
-         continue-on-error: true    
-         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       - name: Terraform APPLY
-         id: Apply
-         run: terraform apply -auto-approve 
-         continue-on-error: true    
-         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+      - name: 'Terraform Validate'
+        id: validate
+        run: terraform validate
+      
