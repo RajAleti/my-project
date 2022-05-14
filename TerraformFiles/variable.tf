@@ -17,17 +17,3 @@ variable "containername" {
   
 }
 
-locals"client_id" {
-  
-}
-
-locals "client_secret" {
-  
-}
-
-locals "tenent_id" {
-  
-}
-locals "subscription_id" {
- 
-}
