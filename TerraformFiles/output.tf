@@ -11,6 +11,6 @@ output "storage" {
 
 output "container" {
 
-    value = azurerm_storage_container.rg[0].name
+    value = azurerm_storage_container.rg.name
   
 }
