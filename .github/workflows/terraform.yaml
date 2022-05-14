@@ -15,10 +15,10 @@ jobs:
 
 
     env:
-      TF_VAR_client_id: ${{ secrets.TF_VAR_client_id }} 
-      TF_VAR_client_secret: ${{ secrets.TF_VAR_client_secret}} 
-      TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
-      TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }} 
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }} 
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET}} 
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }} 
 
 
     steps:
