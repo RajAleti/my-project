@@ -17,7 +17,7 @@ resource "azurerm_storage_account" "storage" {
 
 resource "azurerm_storage_container" "rg" {
 
-    count = 4
+   
   name                  = var.containername
 
   storage_account_name  = azurerm_storage_account.storage.name
@@ -26,7 +26,14 @@ resource "azurerm_storage_container" "rg" {
 
 provider "azurerm" {
     features {
+    subscription_id = var.subscription_id
+    client_id = var.client_id
+    client_secret_id = var.client_secret_id
+    tenent_id= var.tenent_id 
 
     }
+
+   
   
 }
+
