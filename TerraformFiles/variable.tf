@@ -14,7 +14,8 @@ variable "storagename" {
 }
 
 variable "tags" {
-    type = "map"
+    
+    type = map(string)
   
 }
 
