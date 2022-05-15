@@ -61,7 +61,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
 
-      - name: Setup JFrog CLI
-      uses: jfrog/setup-jfrog-cli@v2.3.0
+     
 
           
