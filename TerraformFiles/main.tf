@@ -15,6 +15,7 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
     name=var.resourcename
     location = var.location
+    tags = var.tags
     
   
 }
@@ -26,6 +27,8 @@ resource "azurerm_storage_account" "storage" {
     account_tier = "Standard"
     account_replication_type = "LRS"
 
+    tags = var.tags
+
 }
 
 resource "azurerm_storage_container" "rg" {
@@ -35,6 +38,7 @@ resource "azurerm_storage_container" "rg" {
 
   storage_account_name  = azurerm_storage_account.storage.name
   container_access_type = "private"
+  tags= var.tags
 }
 
 

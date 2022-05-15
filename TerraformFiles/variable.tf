@@ -13,6 +13,11 @@ variable "storagename" {
   
 }
 
+variable "tags" {
+    type = "map"
+  
+}
+
 variable "containername" {
   
 }
