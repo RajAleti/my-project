@@ -38,8 +38,5 @@ resource "azurerm_storage_container" "rg" {
 
   storage_account_name  = azurerm_storage_account.storage.name
   container_access_type = "private"
-  tags= var.tags
+  
 }
-
-
-
