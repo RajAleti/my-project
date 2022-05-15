@@ -46,7 +46,7 @@ jobs:
         id: apply
         run: terraform apply -auto-approve 
 
-        continue-on-error: true
+        continue-on-error: false
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
@@ -55,7 +55,7 @@ jobs:
         id: destroy
         run: terraform destroy -auto-approve 
 
-        continue-on-error: true
+        continue-on-error: false
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
